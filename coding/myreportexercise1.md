@@ -2,7 +2,9 @@
 editor_options:
   markdown:
     wrap: 72
-output: pdf_document
+output:
+  html_document:
+    df_print: paged
 ---
 
 ### Exercise 1
@@ -19,23 +21,32 @@ sequences increases, the database size increases This increases BLAST
 E‑values because the probability of obtaining that score by chance
 increases as its a bigger database. This means hits appear less
 statistically significant in larger databases than in smaller ones.
+
 source: <https://sequenceserver.com/blog/blast-e-value-meaning/>
 <https://www.metagenomics.wiki/tools/blast/evalue>
 
 ### Exercise 2
 
-446 blastp -db uniprot_Atha.fasta -query test.faa -outfmt 6 \>
-test.faa.blast 448 blastx -db uniprot_Atha.fasta -query test.fna -outfmt
-6 \> test.fna.blast
+``` bash
+blastp -db uniprot_Atha.fasta -query test.faa -outfmt 6 > test.faa.blast 
+```
+
+``` bash
+blastx -db uniprot_Atha.fasta -query test.fna -outfmt 6 > test.fna.blast
+```
 
 ### Exercise 3
 
 According to the BLAST Help user manual, the default output format is
-pairwise (-outfmt 0) source:
+pairwise (-outfmt 0)
+
+source:
 <https://blast.ncbi.nlm.nih.gov/doc/blast-topics/resultformatoptions.html>
 
-Example from the blastx output: \>sp\|Q9ZTX8\|ARFF_ARATH Auxin response
-factor 6 OS=Arabidopsis thaliana OX=3702 GN=ARF6 PE=1 SV=2 Length=935
+Example from the blastx output:
+
+\>sp\|Q9ZTX8\|ARFF_ARATH Auxin response factor 6 OS=Arabidopsis thaliana
+OX=3702 GN=ARF6 PE=1 SV=2 Length=935
 
 Score = 1706 bits (4419), Expect = 0.0, Method: Compositional matrix
 adjust. Identities = 935/935 (100%), Positives = 935/935 (100%), Gaps =
@@ -63,15 +74,20 @@ Query 721 VLSSDSMHLGLLaaaahaaaTNSRFTIFYNPRASPSEFVIPLAKYVKAVYHTRVSVGMRF
 
 ### Exercise 4
 
-The difference betweent the blastx and the blastp search results is that
+The difference between the blastx and the blastp search results is that
 one shows the protein sequence hits themselves and therefore is a direct
 comparison, while the blastx searches using the transcript infromation
 therefore translation is needed and it can be slower. Both blasts had
 the Q9ZTX8 as their top hit with 100% valid identity. blastp had a
 bitscore of 1915 and the blastx had a bitscore of 1706, slightly lower.
-Both had strong E-scores Source:
+Both had strong (low) E-scores.
+
+Source:
 <https://www.nlm.nih.gov/ncbi/workshops/2023-08_BLAST_evol/e_value.html>
 <https://card.mcmaster.ca/ontology/40725>
+
+Claude Prompt:
+<https://claude.ai/share/65a77ef6-a219-42d7-a48e-a84c74fab24d>
 
 ### Exercise 5
 
@@ -82,8 +98,12 @@ sequence alignments in this case 3. They are used to detect more protein
 alignments beyond BLAST as instead of making the assumption that each
 position in the sequence is as likely as the other to change, it scores
 based on the positions themselves, better mirroring biological reality.
+
 source:
 <https://www.nlm.nih.gov/ncbi/workshops/2023-08_BLAST_evol/blast_score.html>
+
+Claude Prompt:
+<https://claude.ai/share/52ea9adf-6789-4768-9fc8-df2530989eb1>
 
 ### Exercise 6
 
@@ -109,6 +129,9 @@ The proteins of this family are very similar as many have overlapping
 functions. This HMM validate our blastp and blastx query results.
 
 source: <https://www.uniprot.org/citations/15659631>
+
+Claude prompt:
+<https://claude.ai/share/52ea9adf-6789-4768-9fc8-df2530989eb1>
 
 The table of the HMMscan hits:
 
@@ -189,3 +212,41 @@ Process annotations and proteins supported by the experimental evidence
 codes
 [(ECO:0000269)](https://github.com/evidenceontology/evidenceontology/blob/master/gaf-eco-mapping.txt)
 was **423** annotations.
+
+### Exercise 9 Summary Table
+
+| Task | Question | Results |
+|------------------|----------------------------|--------------------------|
+| 1 | GO terms for <GO:0009414>, <GO:0035618>, <GO:0016491> | [**GO:0016491**](GO:0016491){.uri} - oxidoreductase activity (MF) - 28,421,516 annotations<br>[**GO:0035618**](GO:0035618){.uri} - root hair (CC) - 95 annotations<br>[**GO:0009414**](GO:0009414){.uri} - response to water deprivation (BP) - 27,971 annotations |
+| 2 | GO ID and category for photosynthesis | [**GO:0015979**](GO:0015979){.uri} - photosynthesis (Biological Process) - 1,361,779 annotations |
+| 4 | GO annotations for A0A068LKP4, A0A097PR28, A0A059Q6N8 | **A0A068LKP4**: No GO annotation<br>**A0A097PR28**: 8 annotations - MF: ion binding; BF: DNA repair<br>**A0A059Q6N8**: 6 annotations - BF: photosynthesis; CC: cytoplasm, chloroplast thylakoid membrane, photosystem II |
+| 5 | Gene products involved in leaf development | [**GO:0048366**](GO:0048366){.uri} (leaf development) - 21,805 annotations with 21,009 distinct gene products |
+| 6 | Proteins in Arabidopsis, Prunus, Zea mays assigned to leaf development (<GO:0048366>) | **Arabidopsis thaliana** (3702): 491 proteins<br>**Zea mays** (4577): 164 proteins<br>**Prunus persica** (3760): 57 proteins |
+| 7 | BP annotations with experimental evidence (ECO:0000269) in Arabidopsis and Prunus | Arabidopsis thaliana (3702) & Prunus persica (3760): **423 annotations** |
+
+Table created with Claude based on my search results
+
+<https://claude.ai/share/5fd4e860-9082-4850-81c5-99a2ed09f580>
+
+### Exercise 10
+
+I decided to use my original query accession for ARF6 Q9ZTX8
+
+![](images/clipboard-2008253204.png)
+
+| Quality Metric              | Value                     |
+|-----------------------------|---------------------------|
+| **Average pLDDT**           | 61.62 (Low)               |
+| **pLDDT Distribution**      |                           |
+| Very high (pLDDT \> 90)     | 31%                       |
+| High (90 \> pLDDT \> 70)    | 11.7%                     |
+| Low (70 \> pLDDT \> 50)     | 8.8%                      |
+| Very low (pLDDT \< 50)      | 48.6%                     |
+| **Experimental structures** | None available in the PDB |
+| **Model creation date**     | 1 Aug 2025                |
+| **Sequence version date**   | 26 May 2009               |
+| **Sequence length**         | 935 amino acids           |
+| **Domains**                 | 3                         |
+
+Source:
+<https://alphafold.ebi.ac.uk/entry/AF-Q9ZTX8-F1?activeTab=summary>
