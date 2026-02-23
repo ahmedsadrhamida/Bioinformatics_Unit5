@@ -152,13 +152,13 @@ get
 > MRLSSAGFNPQPHEVTGEKRVLNSELWHACAGPLVSLPPVGSRVVYFPQGHSEQVAASTN
 
 |   | Hit | Name | Query Boundaries | Template Boundaries | Aligned cols | Probability | E-value | Score |
-|--------|--------|--------|--------|--------|--------|--------|--------|--------|
+|----|----|----|----|----|----|----|----|----|
 | 1 | 4LDU_A | Auxin response factor 5; transcription factor, DNA binding protein, nucleus; 2.15A (Arabidopsis thaliana) | 17-59 | 46-88 | 43 | 99.26% | 1.2e-11 | 75.22 |
 | 2 | 4LDV_A | Auxin response factor 1; Transcription Factor, DNA binding, Nucleus, TRANSCRIPTION; HET: FMT; 1.45A (Arabidopsis thaliana) | 17-58 | 14-55 | 42 | 99.06% | 5.9e-10 | 66.66 |
 | 3 | 8OJ2_A | Auxin response factor; Molecular caliper, Auxin Response Factor, Transcription factor, DNA binding, Nucleus, Hormone Response | 17-58 | 19-60 | 42 | 99.01% | 1.4e-9 | 65.13 |
 
 | Align | DB:ID | Source | Length | Score(Bits) | Identities(%) | Positives(%) | E-value |
-|---------|---------|---------|---------|---------|---------|---------|---------|
+|----|----|----|----|----|----|----|----|
 | 1 | AFDB:A0A397XXN9 | TF-B3 domain-containing protein UA=A0A397XXN9 UI=A0A397XXN9_BRACM OS=Brassica campestris OX=3711 GN=BRARA_I02823 | 294 | 126.3 | 98.3 | 100.0 | 4.9e-34 |
 | 2 | AFDB:D7KET2 | Auxin response factor UA=D7KET2 UI=D7KET2_ARALL OS=Arabidopsis lyrata subsp. lyrata OX=81972 GN=ARALYDRAFT_473256 | 891 | 127.5 | 100.0 | 100.0 | 1.5e-32 |
 | 3 | AFDB:A0A1J3J0G9 | Auxin response factor UA=A0A1J3J0G9 UI=A0A1J3J0G9_NOCCA OS=Noccaea caerulescens OX=107243 GN=MP_TR5073_c0_g1_i1_g.13971 | 898 | 127.5 | 100.0 | 100.0 | 1.5e-32 |
@@ -171,7 +171,7 @@ Will try again another day.
 
 ### Exercise 9
 
-1)
+1)  
 
 ![](images/clipboard-697400002.png)
 
@@ -191,11 +191,11 @@ A0A059Q6N8 has 6 annotations, BF pertaining to photosynthesis. Other
 annotations locate it in different cellular components (cytoplasm;
 chloroplast thylakoid membrane; photosystem II)
 
-5)
+5)  
 
 [GO:0048366](https://www.ebi.ac.uk/QuickGO/term/GO:0048366) leaf
-development [ 21,805 annotations
-](https://www.ebi.ac.uk/QuickGO/annotations?goUsage=descendants&goUsageRelationships=is_a,part_of,occurs_in&goId=GO:0048366)
+development [21,805
+annotations](https://www.ebi.ac.uk/QuickGO/annotations?goUsage=descendants&goUsageRelationships=is_a,part_of,occurs_in&goId=GO:0048366)
 with 21,009 distinct gene products.
 
 6)![](images/clipboard-2535084670.png)
@@ -204,7 +204,7 @@ with 21,009 distinct gene products.
 *Prunus persica* are assigned to
 [GO:0048366](https://www.ebi.ac.uk/QuickGO/term/GO:0048366)
 
-7)
+7)  
 
 After selecting the right criteria in the search for *Arabidopsis
 Thaliana* 3702 & *Prunus persica* 3760, the total number of Biological
@@ -216,7 +216,7 @@ was **423** annotations.
 ### Exercise 9 Summary Table
 
 | Task | Question | Results |
-|------------------|----------------------------|--------------------------|
+|----|----|----|
 | 1 | GO terms for <GO:0009414>, <GO:0035618>, <GO:0016491> | [**GO:0016491**](GO:0016491){.uri} - oxidoreductase activity (MF) - 28,421,516 annotations<br>[**GO:0035618**](GO:0035618){.uri} - root hair (CC) - 95 annotations<br>[**GO:0009414**](GO:0009414){.uri} - response to water deprivation (BP) - 27,971 annotations |
 | 2 | GO ID and category for photosynthesis | [**GO:0015979**](GO:0015979){.uri} - photosynthesis (Biological Process) - 1,361,779 annotations |
 | 4 | GO annotations for A0A068LKP4, A0A097PR28, A0A059Q6N8 | **A0A068LKP4**: No GO annotation<br>**A0A097PR28**: 8 annotations - MF: ion binding; BF: DNA repair<br>**A0A059Q6N8**: 6 annotations - BF: photosynthesis; CC: cytoplasm, chloroplast thylakoid membrane, photosystem II |
